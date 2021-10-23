@@ -9,6 +9,9 @@ import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+axios.defaults.baseURL = 'http://localhost:9095';
+window.axios = axios;
+
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
@@ -19,5 +22,6 @@ Vue.use(BootstrapVueIcons)
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  axios
 }).$mount('#app')
